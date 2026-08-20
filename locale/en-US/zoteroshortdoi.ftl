@@ -38,6 +38,13 @@ zoteroshortdoi-autoretrieve-check =
 zoteroshortdoi-autoretrieve-no =
     .label = No
 
+zoteroshortdoi-periodic-verification = Periodic DOI Verification
+
+zoteroshortdoi-monthly-verify =
+    .label = Verify all DOIs in My Library every month
+
+zoteroshortdoi-monthly-verify-desc = DOI Manager checks once per day whether one calendar month has elapsed since the previous automatic verification. The verification runs without opening progress windows.
+
 zoteroshortdoi-notfound-tag = DOI Not Found Tags
 
 zoteroshortdoi-notfound-tag-desc = Tags added to items to indicate reasons why unique DOIs are not found
