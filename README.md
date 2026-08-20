@@ -95,7 +95,3 @@ Monthly verification performs the same DOI and Crossref requests as a manual **V
 The upstream-derived source is distributed under the Mozilla Public License 2.0. See `LICENSE`.
 
 Original DOI Manager: Brenton M. Wiernik. Zotero 8/9 work: Julius Bairaktaris. This repository is maintained by `reginalluna`.
-
-## Disclaimer
-
-This is an independent Zotero extension and is not affiliated with or endorsed by the Zotero project, Crossref, or the DOI Foundation.
