@@ -3,8 +3,8 @@
     "zoteroshortdoi@wiernik.org": {
       "updates": [
         {
-          "version": "2.1.0",
-          "update_link": "https://github.com/reginalluna/zotero-doi-manager-z9/releases/download/v2.1.0/zotero-doi-manager-2.1.0.xpi",
+          "version": "2.2.0",
+          "update_link": "https://github.com/reginalluna/zotero-doi-manager/releases/download/v2.2.0/zotero-doi-manager-2.2.0.xpi",
           "applications": {
             "zotero": {
               "strict_min_version": "8.0",
