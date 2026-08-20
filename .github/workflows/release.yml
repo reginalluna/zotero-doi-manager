@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - manifest.json
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Test
+        run: npm test
+      - name: Build XPI
+        run: npm run xpi
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="$(node -p "require('./manifest.json').version")"
+          TAG="v${VERSION}"
+          ASSET="dist/zotero-doi-manager-${VERSION}.xpi"
+          if gh release view "${TAG}" >/dev/null; then
+            echo "Release ${TAG} already exists."
+            exit 0
+          fi
+          gh release create "${TAG}" "${ASSET}" \
+            --target "${GITHUB_SHA}" \
+            --title "${TAG}" \
+            --notes "Zotero 10 compatibility release. Supports Zotero 8.0 through 10.0.* and includes the modernised DOI Manager source, tests, and build workflow."
