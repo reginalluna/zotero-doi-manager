@@ -38,4 +38,4 @@ jobs:
           gh release create "${TAG}" "${ASSET}" \
             --target "${GITHUB_SHA}" \
             --title "${TAG}" \
-            --notes "Zotero 10 compatibility release. Supports Zotero 8.0 through 10.0.* and includes the modernised DOI Manager source, tests, and build workflow."
+            --notes "Adds automatic monthly DOI verification for My Library, including a preference to disable the schedule. Supports Zotero 8.0 through 10.0.*."
