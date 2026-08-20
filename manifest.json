@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
   "name": "DOI Manager",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Plugin for fetching and validating DOI and shortDOI names",
   "author": "Brenton M. Wiernik, Julius Bairaktaris",
   "applications": {
     "zotero": {
       "id": "zoteroshortdoi@wiernik.org",
-      "update_url": "https://github.com/reginalluna/zotero-doi-manager-z9/raw/refs/heads/main/updates.json",
+      "update_url": "https://github.com/reginalluna/zotero-doi-manager/raw/refs/heads/main/updates.json",
       "strict_min_version": "8.0",
       "strict_max_version": "10.0.*"
     }
