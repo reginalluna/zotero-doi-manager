@@ -1,6 +1,6 @@
 # DOI Manager
 
-DOI Manager retrieves, validates, cleans, and converts DOI names in Zotero. It supports shortDOI conversion, long DOI resolution, DOI validation, Crossref lookup for items without a DOI, automatic processing of newly added items, and configurable result tags.
+DOI Manager retrieves, validates, cleans, and converts DOI names in Zotero. It supports shortDOI conversion, long DOI resolution, DOI validation, Crossref lookup for items without a DOI, automatic processing of newly added items, monthly DOI verification, and configurable result tags.
 
 This repository is an independent continuation of [Zotero DOI Manager](https://github.com/bwiernik/zotero-shortdoi) by Brenton M. Wiernik and incorporates the Zotero 8/9 modernisation by Julius Bairaktaris. It is not an official upstream release.
 
@@ -18,21 +18,24 @@ The Zotero 10 compatibility range follows Zotero's current plug-in guidance. Zot
 - **Get long DOIs** resolves shortDOIs, validates existing DOI names, and searches Crossref when the DOI field is empty.
 - **Verify and clean DOIs** validates stored DOI names, resolves canonical long DOI names, and removes DOI URL or text prefixes.
 - Automatic processing can retrieve, convert, or validate DOIs for newly added supported items.
+- **Monthly DOI verification** checks all supported top-level items in My Library once each calendar month. DOI Manager checks the schedule once per day while Zotero is running and performs the monthly verification without opening progress windows.
 - Configurable tags indicate an invalid DOI, multiple possible matches, or no DOI match.
 
 ## Installation
 
-1. Download `zotero-doi-manager-2.1.0.xpi` from the latest release.
+1. Download `zotero-doi-manager-2.2.0.xpi` from the latest release.
 2. In Zotero, open **Tools → Plugins**.
 3. Select the gear menu and choose **Install Plugin From File…**.
 4. Select the downloaded `.xpi` file.
 5. Restart Zotero if requested.
 
-Releases: https://github.com/reginalluna/zotero-doi-manager-z9/releases/latest
+Releases: https://github.com/reginalluna/zotero-doi-manager/releases/latest
 
 ## Use
 
 Select one or more supported library items, right-click the selection, and open **Manage DOIs**. Automatic processing can be configured from the DOI Manager preference pane and the Zotero Tools menu.
+
+Monthly DOI verification is enabled by default. In the DOI Manager preference pane, clear **Verify all DOIs in My Library every month** to disable it. The first automatic verification runs after the updated plug-in starts if no previous monthly verification timestamp exists. After a successful run, the next run becomes due one calendar month later.
 
 The plug-in communicates with the DOI Handle API, shortDOI service, and Crossref OpenURL service. Network access is required for DOI retrieval and validation.
 
